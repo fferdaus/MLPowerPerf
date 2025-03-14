@@ -2,4 +2,14 @@
 
 Authors: Farah Ferdaus, Xingfu Wu, Valerie Taylor, Zhiling Lan, Sanjif Shanmugavelu, Venkatram Vishwanath, Michael E. Papka
 
-Affliation: Argonne National Laboratory, University of Illinois Chicago, Groq Inc. 
+Affliation: Argonne National Laboratory, University of Illinois Chicago, Groq Inc.  
+
+# Table of Contents
+
+# About
+
+# Evaluated Models and Hardwares
+
+# Citation
+
+Acknowledgements
