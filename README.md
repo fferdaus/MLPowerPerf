@@ -1,7 +1,5 @@
 # Evaluating Energy Efficiency of AI Accelerators Using Two MLPerf Benchmarks
-
 Authors: Farah Ferdaus, Xingfu Wu, Valerie Taylor, Zhiling Lan, Sanjif Shanmugavelu, Venkatram Vishwanath, Michael E. Papka
-
 Affliation: Argonne National Laboratory, University of Illinois Chicago, Groq Inc.  
 
 # Table of Contents
@@ -11,5 +9,7 @@ Affliation: Argonne National Laboratory, University of Illinois Chicago, Groq In
 # Evaluated Models and Hardwares
 
 # Citation
+If you find this repository useful, please consider citing our paper:
+
 
 Acknowledgements
