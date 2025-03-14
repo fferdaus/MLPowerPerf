@@ -11,9 +11,9 @@ Affliation: Argonne National Laboratory, University of Illinois Chicago, Groq In
 # Evaluated Models and Hardwares
 
 | Framework/Hardware | Nvidia A100   | Graphcore      |  Habana Gaudi |  Groq         |
-| -------------      | ------------- |  ------------- | ------------- | ------------- |
-| ResNet50           | Yes           |  Yes           |  Yes          |               |
-| BERT-Large         | Yes           |  Yes           |  Yes          |               |
+| :-------------:    | :-----------: | :------------: | :-----------: | :-----------: |
+| ResNet50           | Yes           |  Yes           |  Yes          |  Yes          |
+| BERT-Large         | Yes           |  Yes           |  Yes          |  Yes          |
 
 # Citation
 If you find this repository useful, please consider citing our paper:
