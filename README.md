@@ -18,6 +18,15 @@ Affliation: Argonne National Laboratory, University of Illinois Chicago, Groq In
 # Citation
 If you find this repository useful, please consider citing our paper:
 
+"""
+@article{chitty2024llm,
+  title={LLM-Inference-Bench: Inference Benchmarking of Large Language Models on AI Accelerators},
+  author={Chitty-Venkata, Krishna Teja and Raskar, Siddhisanket and Kale, Bharat and Ferdaus, Farah and Tanikanti, Aditya and Raffenetti, Ken and Taylor, Valerie and Emani, Murali and Vishwanath, Venkatram},
+  journal={arXiv preprint arXiv:2411.00136},
+  year={2024}
+}
+"""
+
 
 Acknowledgements
 > This research was supported in part by DOE ASCR Base PIONEER (Program for Innovative Optimization of Next-gen Energy Efficient Resources) project and in part by DOE ASCR SciDAC RAPIDS. We gratefully acknowledge the Argonne Leadership Computing Facility for use of AI testbeds. This material is based upon work supported by the U.S. Department of Energy, Office of Science, under contract number DE-AC02-06CH11357, at Argonne National Laboratory.
