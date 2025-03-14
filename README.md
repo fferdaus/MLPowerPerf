@@ -20,3 +20,4 @@ If you find this repository useful, please consider citing our paper:
 
 
 Acknowledgements
+> This research was supported in part by DOE ASCR Base PIONEER (Program for Innovative Optimization of Next-gen Energy Efficient Resources) project and in part by DOE ASCR SciDAC RAPIDS. We gratefully acknowledge the Argonne Leadership Computing Facility for use of AI testbeds. This material is based upon work supported by the U.S. Department of Energy, Office of Science, under contract number DE-AC02-06CH11357, at Argonne National Laboratory.
