@@ -1,1 +1,1 @@
-# Evaluating Energy Efficiency of {AI} Accelerators Using Two MLPerf Benchmarks
+# Evaluating Energy Efficiency of AI Accelerators Using Two MLPerf Benchmarks
