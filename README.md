@@ -1,1 +1,1 @@
-# Power-Profiling-Interface
+# Evaluating Energy Efficiency of {AI} Accelerators Using Two MLPerf Benchmarks
