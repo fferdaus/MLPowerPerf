@@ -4,6 +4,8 @@ Authors: Farah Ferdaus, Xingfu Wu, Valerie Taylor, Zhiling Lan, Sanjif Shanmugav
 
 Affliation: Argonne National Laboratory, University of Illinois Chicago, Groq Inc.  
 
+This repository is the official implementation of "Evaluating Energy Efficiency of AI Accelerators Using Two MLPerf Benchmarks" paper
+
 # Table of Contents
 
 # About
