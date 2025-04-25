@@ -39,11 +39,11 @@ cd Habana
 | Hardware            | Framework      | Directory         |
 | :--------------:    | :------------: | :-------:         |
 | Nvidia A100 GPU     | ResNet50       | [Directory](Nvidia_A100/ResNet50/)         | 
-|                     | BERT_Large     | [Directory](Nvidia_A100/BERT_Large/)       |
+|                     | BERT_Large     | [Directory](Nvidia_A100/Bert_Large/)       |
 | Graphcore BowPod64  | ResNet50       | [Directory](Graphcore/ResNet50/)           |
-|                     | BERT_Large     | [Directory](Graphcore/BERT_Large/)         |
+|                     | BERT_Large     | [Directory](Graphcore/Bert_Large/)         |
 | Habana Gaudi        | ResNet50       | [Directory](Habana/ResNet50/)              | 
-|                     | BERT_Large     | [Directory](Habana/BERT_Large/)            |
+|                     | BERT_Large     | [Directory](Habana/Bert_Large/)            |
 | AMD MI250 GPU       | Model          | [Directory](AMD_MI250/)                    |
 
 ## Citation
