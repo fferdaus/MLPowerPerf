@@ -28,8 +28,9 @@ The significantly increasing use of artificial intelligence (AI) has led to the 
 Please navigate to the relevant directories and refer to the README.md there. 
 
 ```sh
-cd ResNet50
-cd Bert_Large
+cd Nvidia_A100
+cd Graphcore
+cd Habana
 ```
 
 ## Citation
