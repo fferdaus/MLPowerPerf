@@ -8,9 +8,9 @@ This repository is the official implementation of "Evaluating Energy Efficiency 
 
 ## Table of Contents
 
-- [About](#-about)
+- [About](#about)
 - [Evaluated Models and Hardwares](#evaluated-models-and-hardwares)
-- [Citation](#-citation)
+- [Citation](#citation)
 - [Acknowledgement](#acknowledgements)
 
 ## About
