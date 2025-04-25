@@ -20,8 +20,17 @@ The significantly increasing use of artificial intelligence (AI) has led to the 
 
 | Framework/Hardware | Nvidia A100   | Graphcore      |  Habana Gaudi |  Groq         |
 | :-------------:    | :-----------: | :------------: | :-----------: | :-----------: |
-| ResNet50           | Yes           |  Yes           |  Yes          |  Yes          |
-| BERT-Large         | Yes           |  Yes           |  Yes          |  Yes          |
+| ResNet50           | ✅           |  ✅            |  ✅          |  ✅           |
+| BERT-Large         | ✅           |  ✅            |  ✅          |  ✅           |
+
+## Instructions
+
+Please navigate to the relevant directories and refer to the README.md there. 
+
+```sh
+cd ResNet50
+cd Bert_Large
+```
 
 ## Citation
 If you find this repository useful, please consider citing our paper:
