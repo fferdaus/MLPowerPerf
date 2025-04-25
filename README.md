@@ -7,6 +7,7 @@ Affliation: Argonne National Laboratory, University of Illinois Chicago, Groq In
 # Table of Contents
 
 # About
+The significantly increasing use of artificial intelligence (AI) has led to the availability of specialized AI accelerators, aiming to enhance the performance and energy efficiency of AI workloads. In this work, we conduct an initial study to evaluate the energy requirements of four AI accelerators: Nvidia A100 GPUs, Intel Habana Gaudi Processing Units (HPUs), Graphcore Bow-Pod64 Intelligence Processing Units (IPUs), and GroqRack Language Processing Units (LPUs) using two popular MLPerf benchmarks: BERT-Large and ResNet50. We report the energy requirements for the two benchmarks to achieve a common MLPerf specified target accuracy. The benchmarks and AI accelerators were chosen based on the following criteria: publicly available tools or libraries from the vendors to monitor power consumption, publicly available optimized models from the vendors, and access to the AI accelerators. 
 
 # Evaluated Models and Hardwares
 
