@@ -23,7 +23,7 @@ The significantly increasing use of artificial intelligence (AI) has led to the 
 | ResNet50           | ✅           |  ✅            |  ✅          |  ✅           |
 | BERT-Large         | ✅           |  ✅            |  ✅          |  ✅           |
 
-## Instructions and Quick Guide 
+## Instructions
 
 Please navigate to the relevant directories and refer to the README.md there. 
 
@@ -33,6 +33,7 @@ cd Graphcore
 cd Habana
 ```
 
+## Quick Guide 
 
 | Hardware            | Framework      | Directory         |
 | :--------------:    | :------------: | :-------:         |
