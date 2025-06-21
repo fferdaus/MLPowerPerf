@@ -18,10 +18,10 @@ The significantly increasing use of artificial intelligence (AI) has led to the 
 
 ## Evaluated Models and Hardwares
 
-| Framework/Hardware | Nvidia A100   | Graphcore      |  Habana Gaudi |  Groq         |
-| :-------------:    | :-----------: | :------------: | :-----------: | :-----------: |
-| ResNet50           | ✅           |  ✅            |  ✅          |  ✅           |
-| BERT-Large         | ✅           |  ✅            |  ✅          |  ✅           |
+| Framework/Hardware | Nvidia A100   | Graphcore      |  Habana Gaudi |  Groq         |  AMD         |
+| :-------------:    | :-----------: | :------------: | :-----------: | :-----------: |:-----------: |
+| ResNet50           | ✅           |  ✅            |  ✅          |  ✅           | WIP          |
+| BERT-Large         | ✅           |  ✅            |  ✅          |  ✅           | WIP          |
 
 ## Instructions
 
