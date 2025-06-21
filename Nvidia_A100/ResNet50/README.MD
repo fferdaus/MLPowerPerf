@@ -21,5 +21,5 @@ python benchmark_latency.py --batch-size=32 --tensor-parallel-size=1 --input-len
 
 1. Use `launch.py` script provided here to collect throughput measurements. 
 2. Use `launch_power.py` script provided here to collect power measurements. 
-    > You will need `power_utils.py` file for power metric collectring in the same direcotry as the `launch_power.py`
+    > You will need `power_script.py` file for power metric collectring in the same direcotry as the `launch_power.py`
 
