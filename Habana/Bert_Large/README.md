@@ -1,6 +1,6 @@
 # BERT-large on Habana Gaudi
 
-The BERT-large benchmark is sourced from the HabanaAI Model References Github Repo. https://github.com/HabanaAI/Model-References/blob/master/PyTorch/nlp/bert/README.md
+The BERT-large benchmark is sourced from the HabanaAI Model References Github Repo. https://github.com/HabanaAI/Model-References/blob/master/README.md
 
 We utilized Gaudi1 systems at AI testbeds within ALCF.
 
