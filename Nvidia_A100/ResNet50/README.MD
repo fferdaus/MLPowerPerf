@@ -11,10 +11,7 @@ Follow the instructions from the NVIDIA Deep Learning Examples GitHub repo for s
 ## Running ResNet50 Benchmark
 
 ```bash
-git clone https://github.com/vllm-project/vllm.git
-cd vllm/benchmarks/
-
-python benchmark_latency.py --batch-size=32 --tensor-parallel-size=1 --input-len=32--output-len=32 --model="meta-llama/Llama-2-7b-hf" --dtype="float16" --trust-remote-code
+python3 ./launch.py --model resnet50 --precision AMP --mode convergence_no_ckpts --platform DGXA100 /local/scratch/ImageNet/ --raport-file polaris_amp_pyenv_epoch50_gpu1_launch.json --epochs 50 
 ```
 
 ## Run Benchmarks 
