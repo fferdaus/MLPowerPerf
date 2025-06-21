@@ -15,13 +15,13 @@ Follow the instructions from the Graphcore Examples GitHub repo for setup.
 
 ## Run Benchmarks 
 
-* Running for 4 IPU
+* Running for 4 IPUs
 
 ```bash
 poprun -vv --vipu-partition=slurm_${SLURM_JOBID} --num-instances=2 --num-replicas=4 --executable-cache-path=$PYTORCH_CACHE_DIR python3 /projects/EE-ECP/fferdaus/examples/vision/cnns/pytorch/train/train.py --config resnet50-pod4 --imagenet-data-path /mnt/localdata/datasets/imagenet-raw-dataset --epoch 100 --validation-mode during --dataloader-worker 14 --dataloader-rebatch-size 256 
 ```
 
-* Running for 16 IPU
+* Running for 16 IPUs
 
 ```bash
 poprun -vv --vipu-partition=slurm_${SLURM_JOBID} --num-instances=4 --num-replicas=16 --executable-cache-path=$PYTORCH_CACHE_DIR python3 /projects/EE-ECP/fferdaus/examples/vision/cnns/pytorch/train/train.py --config resnet50 --imagenet-data-path /mnt/localdata/datasets/imagenet-raw-dataset --epoch 100 --validation-mode during --dataloader-worker 14 --dataloader-rebatch-size 256
