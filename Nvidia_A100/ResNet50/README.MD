@@ -10,9 +10,8 @@ Follow the instructions from the NVIDIA Deep Learning Examples GitHub repo for s
 
 ## Running ResNet50 Benchmark
 
-1. Use `launch.py` script provided here to collect throughput measurements. 
-2. Use `launch_power.py` script provided here to collect power measurements. 
-    > You will need `power_script.py` file for power metric collectring in the same direcotry as the `launch_power.py`
+* Use `launch.py` script provided here to collect throughput and power measurements. 
+    > You will need `power_script.py` file for power metric collectring in the same direcotry as the `launch.py`
 
 ## Run Benchmarks 
 
