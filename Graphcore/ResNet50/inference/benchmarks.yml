@@ -1,0 +1,273 @@
+---
+common_options: &common_options
+  output:
+    - [batchsize, 'batchsize']
+    - [samples/sec, 'throughput']
+    - [latency(ms), 'latency']
+
+regex_options: &regex_options
+  data:
+    throughput:
+      regexp: 'throughput: *(.*?) samples\/sec'
+    latency:
+      regexp: 'latency avg: *(.*?) ms'
+
+synth_options: &synth_options
+  data:
+    throughput:
+      regexp: 'throughput: *(.*?) samples\/sec'
+  output:
+    - [samples/sec, 'throughput']
+    - [batchsize, 'batchsize']
+
+
+config_options: &config_options
+  requirements_path: requirements.txt
+  required_apt_packages_path: required_apt_packages.txt
+  pre_run_commands: [make install, make install-turbojpeg]
+
+pytorch_resnet50_infer_gen_pod4:
+  <<: [*common_options, *regex_options, *config_options]
+  description: |
+    Resnet50 micro-batch-sizes 1 to 64 inference on 4 IPUs using data generated on the
+    host
+  parameters:
+    batchsize: 1,64
+  cmd: >-
+    poprun
+      -vv
+      --mpi-local-args="-x POPLAR_RUNTIME_OPTIONS"
+      --num-instances=2
+      --num-replicas=4
+      --remove-partition=no
+      --reset-partition=no
+      --update-partition=yes
+    python3 run_benchmark.py
+      --config resnet50
+      --data generated
+      --micro-batch-size {batchsize}
+      --iterations 200
+      --num-io-tiles 64
+      --dataloader-worker 16
+
+pytorch_resnet50_minlatency_infer_gen_pod4:
+  <<: [*common_options, *regex_options, *config_options]
+  description: |
+    Resnet50 micro-batch-sizes 1,4 inference on 4 IPUs using data generated on the
+    host with minimum latency
+  parameters:
+    batchsize: 1,4
+  cmd: >-
+    poprun
+      -vv
+      --mpi-local-args="
+        -x POPLAR_RUNTIME_OPTIONS
+        -x POPLAR_ENGINE_OPTIONS"
+      --num-instances=2
+      --num-replicas=4
+      --remove-partition=no
+      --reset-partition=no
+      --update-partition=yes
+    python3 run_benchmark.py
+      --config resnet50
+      --data generated
+      --micro-batch-size {batchsize}
+      --iterations 200
+      --dataloader-worker 16
+  env:
+    POPLAR_ENGINE_OPTIONS: '{"exchange.enablePrefetch":"false"}'
+
+pytorch_efficientnet_b0_infer_gen_pod4:
+  <<: [*common_options, *regex_options, *config_options]
+  description: |
+    EfficientNet-B0 micro-batch-sizes 1 to 48 inference on 4 IPUs
+    using data generated on the host
+  parameters:
+    batchsize: 1,48
+  cmd: >-
+    poprun
+      -vv
+      --mpi-local-args="-x POPLAR_RUNTIME_OPTIONS"
+      --num-instances=2
+      --num-replicas=4
+      --remove-partition=no
+      --reset-partition=no
+      --update-partition=yes
+    python3 run_benchmark.py
+      --config efficientnet-b0
+      --data generated
+      --micro-batch-size {batchsize}
+      --iterations 200
+      --num-io-tiles 64
+      --dataloader-worker 16
+
+pytorch_efficientnet_b0_minlatency_infer_gen_pod4:
+  <<: [*common_options, *regex_options, *config_options]
+  description: |
+    EfficientNet-B0 micro-batch-sizes 1 to 4 inference on 4 IPUs
+    using data generated on the host, configured for min latency
+  parameters:
+    batchsize: 1,4
+  cmd: >-
+    poprun
+      -vv
+      --mpi-local-args="
+        -x POPLAR_RUNTIME_OPTIONS
+        -x POPLAR_ENGINE_OPTIONS"
+      --num-instances=2
+      --num-replicas=4
+      --remove-partition=no
+      --reset-partition=no
+      --update-partition=yes
+    python3 run_benchmark.py
+      --config efficientnet-b0
+      --data generated
+      --micro-batch-size {batchsize}
+      --iterations 200
+      --dataloader-worker 16
+  env:
+    POPLAR_ENGINE_OPTIONS: '{"exchange.enablePrefetch":"false"}'
+
+pytorch_efficientnet_b0_gn_infer_gen_pod4:
+  <<: [*common_options, *regex_options, *config_options]
+  description: |
+    EfficientNet-B0-G16-GN micro-batch-sizes 1 to 100 inference on 4 IPUs
+    using data generated on the host
+  parameters:
+    batchsize: 1,100
+  cmd: >-
+    poprun
+      -vv
+      --mpi-local-args="-x POPLAR_RUNTIME_OPTIONS"
+      --num-instances=2
+      --num-replicas=4
+      --remove-partition=no
+      --reset-partition=no
+      --update-partition=yes
+    python3 run_benchmark.py
+      --config efficientnet-b0-g16-gn
+      --data generated
+      --micro-batch-size {batchsize}
+      --iterations 200
+      --num-io-tiles 64
+      --dataloader-worker 16
+
+pytorch_efficientnet_b4_infer_gen_pod4:
+  <<: [*common_options, *regex_options, *config_options]
+  description: |
+    EfficientNet-B4 micro-batch-sizes 1 to 10 inference on 4 IPUs
+    using data generated on the host
+  parameters:
+    batchsize: 1,12
+  cmd: >-
+    poprun
+      -vv
+      --mpi-local-args="-x POPLAR_RUNTIME_OPTIONS"
+      --num-instances=2
+      --num-replicas=4
+      --remove-partition=no
+      --reset-partition=no
+      --update-partition=yes
+    python3 run_benchmark.py
+      --config efficientnet-b4
+      --data generated
+      --micro-batch-size {batchsize}
+      --iterations 200
+      --num-io-tiles 32
+      --dataloader-worker 16
+
+pytorch_efficientnet_b4_minlatency_infer_gen_pod4:
+  <<: [*common_options, *regex_options, *config_options]
+  description: |
+    EfficientNet-B4 micro-batch-sizes 1 to 4 inference on 4 IPUs
+    using data generated on the host, configured for min latency
+  parameters:
+    batchsize: 1,4
+  cmd: >-
+    poprun
+      -vv
+      --mpi-local-args="
+        -x POPLAR_RUNTIME_OPTIONS
+        -x POPLAR_ENGINE_OPTIONS"
+      --num-instances=2
+      --num-replicas=4
+      --remove-partition=no
+      --reset-partition=no
+      --update-partition=yes
+    python3 run_benchmark.py
+      --config efficientnet-b4
+      --data generated
+      --micro-batch-size {batchsize}
+      --iterations 200
+      --dataloader-worker 16
+  env:
+    POPLAR_ENGINE_OPTIONS: '{"exchange.enablePrefetch":"false"}'
+
+pytorch_efficientnet_b4_gn_infer_gen_pod4:
+  <<: [*common_options, *regex_options, *config_options]
+  description: |
+    EfficientNet-B4-G16-GN micro-batch-sizes 1 to 21 inference on 4 IPUs
+    using data generated on the host
+  parameters:
+    batchsize: 1,21
+  cmd: >-
+    poprun
+      -vv
+      --mpi-local-args="-x POPLAR_RUNTIME_OPTIONS"
+      --num-instances=2
+      --num-replicas=4
+      --remove-partition=no
+      --reset-partition=no
+      --update-partition=yes
+    python3 run_benchmark.py
+      --config efficientnet-b4-g16-gn
+      --data generated
+      --micro-batch-size {batchsize}
+      --iterations 200
+      --num-io-tiles 32
+      --dataloader-worker 16
+
+pytorch_resnet50_tritonserver_infer_real_pod4:
+  <<: [*common_options, *regex_options, *config_options]
+  description: |
+    Resnet50 in its default configuration (read from configs.yml)
+    which is hosted by Triton server.
+  parameters:
+    request_type: SYNC,ASYNC
+    parallel_processes: 1,8
+  cmd: >-
+    python3 run_benchmark_with_triton_server.py
+      -s
+      -k test_single_model[resnet50-resnet50-RequestType.{request_type}-{parallel_processes}]
+      --benchmark_only=true
+      ../tests/tritonserver/
+
+pytorch_efficientnet_b0_tritonserver_infer_real_pod4:
+  <<: [*common_options, *regex_options, *config_options]
+  description: |
+    EfficientNet-b0 in its default configuration (read from configs.yml)
+    which is hosted by Triton server.
+  parameters:
+    request_type: SYNC,ASYNC
+    parallel_processes: 1,8
+  cmd: >-
+    python3 run_benchmark_with_triton_server.py
+      -s
+      -k test_single_model[efficientnet-b0-efficientnet-b0-RequestType.{request_type}-{parallel_processes}]
+      --benchmark_only=true
+      ../tests/tritonserver/
+
+pytorch_efficientnet_b4_tritonserver_infer_real_pod4:
+  <<: [*common_options, *regex_options, *config_options]
+  description: |
+    EfficientNet-b4 in its default configuration (read from configs.yml)
+    which is hosted by Triton server.
+  parameters:
+    request_type: SYNC,ASYNC
+    parallel_processes: 1,8
+  cmd: >-
+    python3 run_benchmark_with_triton_server.py
+      -s
+      -k test_single_model[efficientnet-b4-efficientnet-b4-RequestType.{request_type}-{parallel_processes}]
+      --benchmark_only=true
+      ../tests/tritonserver/
