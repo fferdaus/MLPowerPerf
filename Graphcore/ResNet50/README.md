@@ -10,14 +10,19 @@ Follow the instructions from the Graphcore Examples GitHub repo for setup.
 
 ## Running ResNet50 Benchmark
 
-1. Use `launch.py` script provided here to collect throughput measurements. 
-2. Use `launch_power.py` script provided here to collect power measurements. 
-    > You will need `power_script.py` file for power metric collectring in the same direcotry as the `launch_power.py`
+* Use `train.py` script provided here to collect throughput and power measurements. 
+    > You will need `power_script.py` file for power metric collectring in the same direcotry as the `train.py`
 
 ## Run Benchmarks 
 
-* Running for automatic Mixed Precision
+* Running for 4 IPU
 
 ```bash
-python3 ./launch.py --model resnet50 --precision AMP --mode convergence_no_ckpts --platform DGXA100 /local/scratch/ImageNet/ --raport-file sophia_amp_epoch50.json --epochs 50 
+poprun -vv --vipu-partition=slurm_${SLURM_JOBID} --num-instances=2 --num-replicas=4 --executable-cache-path=$PYTORCH_CACHE_DIR python3 /projects/EE-ECP/fferdaus/examples/vision/cnns/pytorch/train/train.py --config resnet50-pod4 --imagenet-data-path /mnt/localdata/datasets/imagenet-raw-dataset --epoch 100 --validation-mode during --dataloader-worker 14 --dataloader-rebatch-size 256 
+```
+
+* Running for 16 IPU
+
+```bash
+poprun -vv --vipu-partition=slurm_${SLURM_JOBID} --num-instances=4 --num-replicas=16 --executable-cache-path=$PYTORCH_CACHE_DIR python3 /projects/EE-ECP/fferdaus/examples/vision/cnns/pytorch/train/train.py --config resnet50 --imagenet-data-path /mnt/localdata/datasets/imagenet-raw-dataset --epoch 100 --validation-mode during --dataloader-worker 14 --dataloader-rebatch-size 256
 ```
