@@ -10,7 +10,7 @@ Follow the instructions from the NVIDIA Deep Learning Examples GitHub repo for s
 
 ## Running BERT-large Benchmark
 
-* Use `launch.py` script provided here to collect throughput ad power measurements. 
+* Use `run_pretraining.py` script provided here to collect throughput and power measurements. 
     > You will need `power_script.py` file for power metric collectring in the same direcotry as the `run_pretraining.py`
 
 ## Run Benchmarks 
