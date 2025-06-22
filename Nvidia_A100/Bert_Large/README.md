@@ -15,7 +15,7 @@ Follow the instructions from the NVIDIA Deep Learning Examples GitHub repo for s
 
 ## Run Benchmarks 
 
-* Running for automatic Mixed Precision
+* Running for pretraining
 
 ```bash
 python3 ./launch.py --model resnet50 --precision AMP --mode convergence_no_ckpts --platform DGXA100 /local/scratch/ImageNet/ --raport-file sophia_amp_epoch50.json --epochs 50 
