@@ -29,7 +29,7 @@ import power_script
 
 def train(training_model, training_data, args, lr_scheduler, epochs, optimizer, validation_function=None):
     training_start_time = datetime.now()
-    probe = ipu_util.ipuPowerProbe(0.25)
+    probe = power_script.ipuPowerProbe(0.25)
     logging.info(f"Training the model. Start: {str(training_start_time)}")
 
     # A generic container used by the train function to set and update the host-side training state.
