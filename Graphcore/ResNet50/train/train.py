@@ -25,9 +25,11 @@ import datasets
 import datasets.augmentations as augmentations
 from datetime import datetime
 
+import power_script 
 
 def train(training_model, training_data, args, lr_scheduler, epochs, optimizer, validation_function=None):
     training_start_time = datetime.now()
+    probe = ipu_util.ipuPowerProbe(0.25)
     logging.info(f"Training the model. Start: {str(training_start_time)}")
 
     # A generic container used by the train function to set and update the host-side training state.
@@ -62,6 +64,7 @@ def train(training_model, training_data, args, lr_scheduler, epochs, optimizer, 
         if state.epoch in loss_scaling_steps.keys():
             state.new_loss_scaling = loss_scaling_steps[state.epoch]
 
+        probe.start()
         # Beginning of the epoch.
         for state.batch_idx, (input_data, labels) in enumerate(bar):
             state.epoch_progress = (state.epoch - 1) + (state.batch_idx + 1) / state.iterations_per_epoch
@@ -92,6 +95,11 @@ def train(training_model, training_data, args, lr_scheduler, epochs, optimizer, 
             update_lr(lr_scheduler, optimizer, training_model, state, args)
 
         # End of the epoch.
+
+        training_powers, training_util, training_powers_time = probe.stop()
+        totPow_Train += [training_powers]
+        trainTime += [training_powers_time]
+        
         if not args.checkpoint_output_dir == "" and (state.epoch % args.checkpoint_save_freq) == 0:
             model_state = models.get_model_state_dict(training_model)
             optimizer_state = optimizer.state_dict()
