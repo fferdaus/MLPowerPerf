@@ -29,8 +29,10 @@ from utils import logger, get_sdk_version
 from args import parse_bert_args
 from checkpointing import resolve_checkpoint_input_dir
 
+import power_script 
 
 def main():
+    probe = power_script.ipuPowerProbe(0.25)
     config = transformers.BertConfig(**(vars(parse_bert_args(config_file="configs_squad.yml"))))
     if not config.checkpoint_input_dir:
         logger("[warning] checkpoint-input-dir was not specified; training with uninitialized BERT...")
@@ -144,6 +146,7 @@ def main():
         scheduler = get_lr_scheduler(optimizer, "linear", config.lr_warmup, config.num_epochs * len(train_dl))
         logger("Training...")
         for epoch in range(config.num_epochs):
+            probe.start()
             for step, batch in enumerate(train_dl):
                 start_step = time.perf_counter()
                 outputs = training_model(
@@ -167,6 +170,10 @@ def main():
                     wandb.log(
                         {"Loss": loss, "LR": scheduler.get_last_lr()[0], "Step": step, "Throughput": step_throughput}
                     )
+
+        training_powers, training_util, training_powers_time = probe.stop()
+        totPow_Train += [training_powers]
+        trainTime += [training_powers_time]
         training_model.detachFromDevice()
 
     if do_validation:
