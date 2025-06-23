@@ -36,6 +36,8 @@ import power_script
 
 if __name__ == "__main__":
 
+    probe = power_script.ipuPowerProbe(0.25)
+    
     # Ignore known warnings
     warnings.filterwarnings("ignore", category=torch.jit.TracerWarning)
     logging.getLogger("poptorch::python").setLevel(logging.ERROR)
@@ -174,11 +176,15 @@ if __name__ == "__main__":
         disable=config.disable_progress_bar or (config.use_popdist and not (config.popdist_rank == 0)),
     )
     for step in train_iterator:
+        probe.start()
         start_step = time.perf_counter()
         outputs = poptorch_model(*next(loader))
         scheduler.step()
         poptorch_model.setOptimizer(optimizer)
         step_length = sync_metrics(time.perf_counter() - start_step)
+        training_powers, training_util, training_powers_time = probe.stop()
+        totPow_Train += [training_powers]
+        trainTime += [training_powers_time]
         outputs_sync = sync_metrics(outputs, factor)
 
         if not config.use_popdist or config.popdist_rank == 0:
