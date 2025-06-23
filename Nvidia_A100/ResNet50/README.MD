@@ -18,12 +18,12 @@ Follow the instructions from the NVIDIA Deep Learning Examples GitHub repo for s
 * Running for automatic Mixed Precision
 
 ```bash
-python3 ./launch.py --model resnet50 --precision AMP --mode convergence_no_ckpts --platform DGXA100 /local/scratch/ImageNet/ --raport-file sophia_amp.json --epochs 50
+python3 ./launch.py --model resnet50 --precision AMP --mode convergence_no_ckpts --platform DGXA100 /local/scratch/ImageNet/ --raport-file sophia_amp.json 
 ```
 
 * Running for FP32 Precision
 
 ```bash
-python3 ./launch.py --model resnet50 --precision FP32 --mode convergence_no_ckpts --platform DGXA100 /local/scratch/ImageNet/ --raport-file sophia_fp32.json --epochs 50
+python3 ./launch.py --model resnet50 --precision FP32 --mode convergence_no_ckpts --platform DGXA100 /local/scratch/ImageNet/ --raport-file sophia_fp32.json 
 ```
 
