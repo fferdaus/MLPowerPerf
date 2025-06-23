@@ -32,6 +32,7 @@ from checkpointing import save_checkpoint, checkpoints_exist, resolve_checkpoint
 from utils import get_sdk_version, cycle, logger, sync_metrics
 from args import parse_bert_args
 
+import power_script 
 
 if __name__ == "__main__":
 
