@@ -42,6 +42,13 @@ from . import utils
 from .logger import TrainingMetrics, ValidationMetrics
 from .models.common import EMA
 
+from power_script import gpuPowerProbe
+
+polling_interval = 0.25
+trainTime = []
+inferTime = []
+totPow_Train = []
+totPow_Infer = []
 
 class Executor:
     def __init__(
@@ -218,6 +225,7 @@ def train(
 
     data_iter = enumerate(train_loader)
 
+    probe.start()
     for i, (input, target) in data_iter:
         bs = input.size(0)
         lr = lr_scheduler(i)
@@ -251,6 +259,9 @@ def train(
             interrupted = True
             break
 
+    training_powers, training_powers_time = probe.stop()
+    totPow_Train += [training_powers]
+    trainTime += [training_powers_time]
     return interrupted
 
 
@@ -262,6 +273,7 @@ def validate(infer_fn, val_loader, log_fn, prof=-1, with_loss=True, topk=5):
 
     data_iter = enumerate(val_loader)
 
+    probe.start()
     for i, (input, target) in data_iter:
         bs = input.size(0)
         data_time = time.time() - end
@@ -307,6 +319,9 @@ def validate(infer_fn, val_loader, log_fn, prof=-1, with_loss=True, topk=5):
             time.sleep(5)
             break
 
+    inference_powers, inference_powers_time = probe.stop()
+    totPow_Infer += [inference_powers]
+    inferTime += [inference_powers_time]
     return top1.get_val()
 
 
