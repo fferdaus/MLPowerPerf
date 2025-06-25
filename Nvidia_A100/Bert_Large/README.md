@@ -1,6 +1,6 @@
 # BERT-large on NVIDIA A100
 
-The BERT-large benchmark is sourced from the NVIDIA Deep Learning Examples Github Repo. https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/LanguageModeling/BERT/README.md
+The BERT-large benchmark is sourced from the [NVIDIA Deep Learning Examples Github Repo](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/LanguageModeling/BERT/README.md)
 
 We used A100 80GB GPU systems on [Sophia](https://www.alcf.anl.gov/sophia) at ALCF.
 
