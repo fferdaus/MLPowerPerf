@@ -1,8 +1,8 @@
 # ResNet50 on Graphcore
 
-The ResNet50 benchmark is sourced from the Graphcore Examples Github Repo. https://github.com/graphcore/examples/blob/master/vision/cnns/pytorch/README.md
+The ResNet50 benchmark is sourced from the [Graphcore Examples Github Repo](https://github.com/graphcore/examples/blob/master/vision/cnns/pytorch/README.md)
 
-We utilized Graphcore systems at AI testbeds (https://www.alcf.anl.gov/alcf-ai-testbed) within ALCF.
+We utilized Graphcore systems at [AI testbeds](https://www.alcf.anl.gov/alcf-ai-testbed) within ALCF.
 
 ## Setup
 
