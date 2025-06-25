@@ -2,7 +2,7 @@
 
 The BERT-large benchmark is sourced from the Graphcore Examples Github Repo. https://github.com/graphcore/examples/blob/master/nlp/bert/pytorch/README.md
 
-We utilized Graphcore systems at AI testbeds within ALCF.
+We utilized Graphcore systems (https://docs.alcf.anl.gov/ai-testbed/graphcore/getting-started/) at AI testbeds within ALCF.
 
 ## Setup
 
