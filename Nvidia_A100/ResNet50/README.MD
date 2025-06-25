@@ -2,7 +2,7 @@
 
 The ResNet50 benchmark is sourced from the NVIDIA Deep Learning Examples Github Repo. https://github.com/NVIDIA/DeepLearningExamples/blob/master/PyTorch/Classification/ConvNets/resnet50v1.5/README.md
 
-We used A100 40GB GPU systems on Sophia (https://www.alcf.anl.gov/sophia) at ALCF.
+We used A100 40GB GPU systems on [Sophia](https://www.alcf.anl.gov/sophia) at ALCF.
 
 ## Setup
 
