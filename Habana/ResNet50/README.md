@@ -1,6 +1,6 @@
 # ResNet50 on Habana Gaudi
 
-The ResNet50 benchmark is sourced from the HabanaAI Model References Github Repo. https://github.com/HabanaAI/Model-References/README.md
+The ResNet50 benchmark is sourced from the HabanaAI Model References Github Repo. https://github.com/HabanaAI/Model-References/blob/master/README.md
 
 We utilized Gaudi1 systems at AI testbeds (https://www.alcf.anl.gov/alcf-ai-testbed) within ALCF.
 
