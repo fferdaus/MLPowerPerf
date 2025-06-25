@@ -43,6 +43,8 @@ cd Habana
 |                     | BERT_Large     | [Directory](Graphcore/Bert_Large/)         |
 | Habana Gaudi        | ResNet50       | [Directory](Habana/ResNet50/)              | 
 |                     | BERT_Large     | [Directory](Habana/Bert_Large/)            |
+| Groq                | ResNet50       | [Directory](Groq/ResNet50/)              | 
+|                     | BERT_Large     | [Directory](Groq/Bert_Large/)            |
 | AMD MI250 GPU       | Model          | [Directory](AMD_MI250/)                    |
 
 ## Citation
