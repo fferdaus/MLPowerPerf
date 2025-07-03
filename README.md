@@ -59,7 +59,6 @@ If you find this repository useful, please consider citing our paper:
   volume={},
   number={},
   pages={549-558},
-  keywords={Training;Energy consumption;AI accelerators;Clustering algorithms;Benchmark testing;Throughput;Energy efficiency;Inference algorithms;Hardware;Residual neural networks;Deep Learning;AI Accelerators;Energy Efficiency;MLPerf;Nvidia A100;Graphcore;Intel Gaudi;Groq},
   doi={10.1109/CCGRID64434.2025.00035}}
 ```
 
