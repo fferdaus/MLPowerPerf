@@ -51,12 +51,16 @@ cd Habana
 If you find this repository useful, please consider citing our paper:
 
 ```
-@INPROCEEDINGS{farah2025mlperf,
-  title={Evaluating Energy Efficiency of AI Accelerators Using Two MLPerf Benchmarks},
+@INPROCEEDINGS{11044796,
   author={Ferdaus, Farah and Wu, Xingfu and Taylor, Valerie and Lan, Zhiling and Shanmugavelu, Sanjif and Vishwanath, Venkatram and Papka, Michael E.},
-  booktitle={25th IEEE International Symposium on Cluster, Cloud, and Internet Computing, 2025},
-  year={2025}
-}
+  booktitle={2025 IEEE 25th International Symposium on Cluster, Cloud and Internet Computing (CCGrid)}, 
+  title={Evaluating Energy Efficiency of Ai Accelerators Using Two Mlperf Benchmarks}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={549-558},
+  keywords={Training;Energy consumption;AI accelerators;Clustering algorithms;Benchmark testing;Throughput;Energy efficiency;Inference algorithms;Hardware;Residual neural networks;Deep Learning;AI Accelerators;Energy Efficiency;MLPerf;Nvidia A100;Graphcore;Intel Gaudi;Groq},
+  doi={10.1109/CCGRID64434.2025.00035}}
 ```
 
 
